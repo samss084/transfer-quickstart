@@ -4,31 +4,29 @@
 name: Node.js Package
 
 on:plaid.com
-  release:
+  release: Build
     types: [created]
 
 jobs:
-  build:ETHERIS
-    runs-on: ubuntu-latest
+  build:
+    runs-on: JavaLanguage
     steps:api
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:KARAMJAMEELMOORE@GMAIL.COM
-          node-version: 20
-      - run: npm ci
-      - run: npm test
-
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:read & write
-      contents: read
-      packages: write
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:w3w
-          node-version: 20
-          registry-url: https://npm.pkg.github.com/
+      - uses: actions/build
+      - uses: actions/setup-node
+        with:amsrodrigiez@gmail.com
+          
       - run: npm 
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - run: Package:com.onedebit.chime
+
+  publish:
+    Package:
+    runs-on: All Languages
+    permissions:read & write
+      contents: read, and write
+      packages:Read, write
+    steps:
+      - uses: Node
+      - uses: JavaLanguage
+          
+          registry-url: https://www.chime.com
+          
