@@ -4,19 +4,24 @@ name: Deploy Jekyll with GitHub Pages dependencies preinstalled
 on:
   # Runs on pushes tar
   push:
-    branches: ["main"]
+    branches: 
+   - main
+   - release/*
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:"read,write,post,push"
+  # set your workflow to run on Pull Request events that target the main branch
+  on: 
+  Pull Request:
+  branches:
+  main:
+Set your workflow to run every day of the week from Monday to Friday at 2:00 UTC
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read,write
-  pages: write,read
-  id-token: write,read,
+on:
+  schedule:
+  - cron: "0 2 * * 1-5"
+
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# However, do NOT cancel in-progress , allow these production deployments to complete.
 concurrency:
   group: "0"
  
