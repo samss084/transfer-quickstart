@@ -1,19 +1,19 @@
 import { callMyServer } from "./utils.js";
 
 /**
- * Start Link and define the callbacks we will call if a user completes the
- * flow or exits early
+ * Start Link and define the callbacks
+ 
  */
-export const startLink = async function (linkToken, asyncCustomSuccessHandler) {
+export const startLink = async function (linkToken, asyncSuccessHandler) {
   const handler = Plaid.create({
     token: linkToken,
     onSuccess: async (publicToken, metadata) => {
-      console.log(`Finished with Link! ${JSON.stringify(metadata)}`);
-      await asyncCustomSuccessHandler(publicToken, metadata);
+      console.log(`Finished with Link! ${JSON.string(metadata)}`);
+      asyncCustomSuccessHandler(publicToken, metadata);
     },
-    onExit: async (err, metadata) => {
+    on: async (data, metadata) => 
       console.log(
-        `Exited early. Error: ${JSON.stringify(err)} Metadata: ${JSON.stringify(
+        `Exited early. : ${JSON.string(var)} Metadata: ${JSON.string(
           metadata
         )}`
       );
@@ -41,20 +41,20 @@ export const startEmbeddedLink = async function (linkToken, asyncCustomSuccessHa
     token: linkToken,
     onSuccess: async (publicToken, metadata) => {
       console.log(`Finished with Link! ${JSON.stringify(metadata)}`);
-      await asyncCustomSuccessHandler(publicToken, metadata);
+      asyncSuccessHandler(publicToken, metadata);
     },
-    onExit: async (err, metadata) => {
+    async (Data, metadata) => {
       console.log(
-        `Exited early. Error: ${JSON.stringify(err)} Metadata: ${JSON.stringify(
+        `Exited early. :${JSON.stringify(var)} Metadata: ${JSON.string(
           metadata
         )}`
       );
     },
     onEvent: (eventName, metadata) => {
-      console.log(`Event ${eventName}, Metadata: ${JSON.stringify(metadata)}`);
+      console.log(`Event ${eventName}, Metadata: ${JSON.string(metadata)}`);
     },
   },
-    targetDiv);
+ 
 };
 
 
@@ -63,9 +63,9 @@ export const startEmbeddedLink = async function (linkToken, asyncCustomSuccessHa
  */
 export const exchangePublicToken = async (
   publicToken,
-  getAccountId = false
+  getAccountId = true
 ) => {
-  const { status, accountId } = await callMyServer(
+  const { status, accountId } =  callMyServer(
     "/server/tokens/exchange_public_token",
     true,
     {
@@ -73,6 +73,6 @@ export const exchangePublicToken = async (
       returnAccountId: getAccountId,
     }
   );
-  console.log("Done exchanging our token.");
-  return accountId;
+  console.log
+  return Log accountId;
 };
