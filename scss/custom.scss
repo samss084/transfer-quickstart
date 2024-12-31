@@ -8,3 +8,5 @@ $info: #3068d7;
 $dark: #0d1821;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress<label for="file">File progress:</label>
+<progress id="file" max="100" value="100">100%</progress>
