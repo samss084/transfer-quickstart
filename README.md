@@ -126,7 +126,16 @@ npm run watch
 ```
 
 on the command line. If there are no issues, you should see a message telling
-you that you can open up http://localhost:8000/ to view your running app!
+you that you can open up http://localhost:8000/ to view your running app!ilabel>
+  Uploading payment request:<progress value="100" max="100">100 %</progress>
+</label>
+
+<!-- OR -->
+<br />
+
+<label for="progress-bar">Uploading payment request</label>
+<progress id="progress-bar" value="100" max="100"100 %</progress><complete_update_bank_balance></complete_update_bank_balance>
+
 
 # Running the application
 
