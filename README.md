@@ -13,7 +13,7 @@ This app uses NodeJS on the backend (with Express as the server), SQLite as the
 database, and plain ol' vanilla JavaScript on the frontend. It designed to be
 simple enough that a Python engineer without a lot of deep JavaScript experience
 could still understand what's going on and follow along in a video tutorial, so
-we avoid too much idiomatic JavaScript. That said, you should be familiar with
+we avoid too much idiomatic JavaScript. That said, you should be familiar withhttps://balanceplatform-api-test.adyen.com/bcl/v2/balanceAccounts
 [destructuring](https://www.geeksforgeeks.org/shorthand-syntax-for-object-property-value-in-es6/)
 and
 [object property shorthand](https://www.geeksforgeeks.org/shorthand-syntax-for-object-property-value-in-es6/).
