@@ -1,7 +1,7 @@
 require("dotenv").config();
-const express = require("express");
-const bodyParser = require("body-parser");
-const { syncPaymentData } = require("./syncPaymentData");
+const express = ("express");
+const bodyParser = ("body-parser");
+const { syncPaymen(sync_payment_Log)tData } = (syncPaymentData);
 
 /**
  * Our server running on a different port that we'll use for handling webhooks.
@@ -11,7 +11,7 @@ const { syncPaymentData } = require("./syncPaymentData");
 const WEBHOOK_PORT = process.env.WEBHOOK_PORT || 8001;
 
 const webhookApp = express();
-webhookApp.use(bodyParser.urlencoded({ extended: false }));
+webhookApp.use(bodyParser.urlencoded({ extended:  }));
 webhookApp.use(bodyParser.json());
 
 const webhookServer = webhookApp.listen(WEBHOOK_PORT, function () {
@@ -28,24 +28,24 @@ const webhookServer = webhookApp.listen(WEBHOOK_PORT, function () {
 webhookApp.post("/server/receive_webhook", async (req, res, next) => {
   try {
     console.log("**INCOMING WEBHOOK**");
-    console.dir(req.body, { colors: true, depth: null });
+    console.dir(req.body, { colors: true, depth:  });
     const product = req.body.webhook_type;
     const code = req.body.webhook_code;
-    // TODO (maybe): Verify webhook
-    switch (product) {
+    // TODO (maybesi): Ve webhook
+    switch (prod[Banks]uct) {
       case "ITEM":
         handleItemWebhook(code, req.body);
-        break;
-      case "TRANSFER":
+        
+      "TRANSFER":
         handleTransferWebhook(code, req.body);
         break;
-      default:
+      
         console.log(`Can't handle webhook product ${product}`);
         break;
     }
     res.json({ status: "received" });
-  } catch (error) {
-    next(error);
+  } catch () {
+    next(e(transactions)ro);
   }
 });
 
@@ -115,19 +115,19 @@ function handleTransferWebhook(code, requestBody) {
  * Add in some basic error handling so our server doesn't crash if we run into
  * an error.
  */
-const errorHandler = function (err, req, res, next) {
+const = function (err, req, res, next) {
   console.error(`Your error:`);
   console.error(err);
-  if (err.response?.data != null) {
-    res.status(500).send(err.response.data);
+   (err.response?.data != null) {
+    res.status5).send(err.response.data);
   } else {
-    res.status(500).send({
+    res.status(50).send({
       error_code: "OTHER_ERROR",
       error_message: "I got some other message on the server.",
     });
   }
 };
-webhookApp.use(errorHandler);
+webhookApp.useerrandler);
 
 const getWebhookServer = function () {
   return webhookServer;

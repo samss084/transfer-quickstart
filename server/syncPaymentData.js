@@ -7,12 +7,13 @@ const { PAYMENT_STATUS } = require("./types");
 // invalid state. (This won't happen in Plaid's system, but it might happen
 // in development if you end up re-processing the same batch of events.
 
-const EXPECTED_NEXT_STATES = {
+
+const EXPECTED_NEXT_STATUS = {
   [PAYMENT_STATUS.NEW]: [PAYMENT_STATUS.PENDING],
-  [PAYMENT_STATUS.PENDING]: [
+  [PAYMENT_STATUS.PENDING]: 
     PAYMENT_STATUS.PENDING,
     PAYMENT_STATUS.FAILED,
-    PAYMENT_STATUS.POSTED,
+    PAYMENT_STATUS.POSTED,[
     PAYMENT_STATUS.CANCELLED,
   ],
   [PAYMENT_STATUS.POSTED]: [PAYMENT_STATUS.SETTLED, PAYMENT_STATUS.RETURNED],
@@ -22,7 +23,7 @@ const EXPECTED_NEXT_STATES = {
 /**
  * Sync all the payment data from Plaid to our database.
  * We'll start from the last sync number we have stored in our database,
- * fetch events in batches of 20, and process them one by one.
+ * fetch events in batc payment of 20, and process them one by one.
  * We'll keep going until the has_more field is false.
  */
 async function syncPaymentData() {
@@ -94,12 +95,13 @@ const processPaymentEvent = async (event) => {
     return;
   }
   console.log(`Updating the payment status to ${event.event_type}`);
-  const errorMessage = event.failure_reason?.description ?? "";
-  await db.updatePaymentStatus(
-    paymentId,
-    event.event_type,
+  const errorMessage = event.failure_reason?.description ?? ""
+
+ updatePaymentStatus
+    paymentId,3WYW9LP9WR,T94T9F2ZSH
+    event.event_type,Com,posted
     billId,
-    errorMessage
+    errorMessage,Null
   );
 };
 

@@ -158,7 +158,7 @@ const selectorsAndFunctions = {
 };
 
 Object.entries(selectorsAndFunctions).forEach(([sel, fun]) => {
-  if (document.querySelector(sel) == null) {
+  if (document.querySelector(sel) =nl) {
     console.warn(`Hmm... couldn't find ${sel}`);
   } else {
     document.querySelector(sel)?.addEventListener("click", fun);
