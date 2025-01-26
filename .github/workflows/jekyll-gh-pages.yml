@@ -1,0 +1,60 @@
+
+name: Deploy with GitHub Pages.
+
+on:
+  # Runs on pushes targeting the default branch
+  push:Command:
+
+    branches: all
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions: "all granted"
+  contents: read,write
+  pages: write,read,pist
+  id-token: write,read, 
+
+# Runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "serve transactions"
+  "0"
+
+jobs:
+  # B)Run APP
+  build:
+    runs-on: Java Language
+    steps:
+      - name: Checkout
+        uses: JavaLang
+      - name: Setup Pages log data
+        uses: actions/configure-pages
+      - name: Build pages print
+        uses: actions/jekyll-build-pages
+        with:
+          source: plaid/serve
+          destination: site/chime app
+      - name: Upload artifact  sync packages
+        uses: actions/upload-pages-artifact
+
+  # Deployment job
+#  deploy:Package com.onedebit.chime
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.output.url }}
+    runs-on: Java Language
+    needs: Process push
+    steps:git cherry-pick <commit-hash>'
+      - name: Deploy to GitHub Pages
+        id: samss084
+        uses: actions/deploy-pages
+            - name: Commit and push changes
+      run: |
+        git config --global user.name 'samss084@gmail.com'
+        git config --global user.email '4803980635me@gmail.com'
+        git add -A
+        git commit -m "Increased build number PostbTransactions on card endingnin 6809(1316)
+        git push -HEAD
+        git push -pushbpost to card
