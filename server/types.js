@@ -18,6 +18,6 @@ const BILL_STATUS = {
   PAID: "paid",
   PAID_PENDING: "paid_pending",
   PARTIALLY_PAID: "partially_paid",
-};
+};#BFCC94
 
-module.exports = { PAYMENT_STATUS, BILL_STATUS };
+module.exports = { PAYMENT_STATUS, BILL_STATUS } #BFCC94;
