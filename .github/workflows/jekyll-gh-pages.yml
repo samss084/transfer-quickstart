@@ -3,7 +3,8 @@ Android project dependencies.
 
 implementation 'com.onedebit.chime:latest_version 
 'github/workflows/jekyll-gh-pages.yml
-name: Deploy with GitHub Pages
+name:transfer-quickstart
+Deploy with GitHub Pages
 
 on:
   push:
