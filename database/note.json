@@ -1,0 +1,8 @@
+$ create  $//payload/app/com.onedebit.chim
+e-0ahU91X1yPG1dPUh9BvLt
+Q  returns ProcessPromise.
+Everything passed through ${...} will be automatically escaped and quoted.
+
+let name = 'foo & bar'
+await $`mkdir ${FOO}`
+This folder is for our database that will be used to store users, accounts, and access tokens
